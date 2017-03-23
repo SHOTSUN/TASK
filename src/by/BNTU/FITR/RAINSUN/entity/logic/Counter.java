@@ -1,22 +1,23 @@
 package by.BNTU.FITR.RAINSUN.entity.logic;
 
-import by.BNTU.FITR.RAINSUN.model.entity.Depo;
-import by.BNTU.FITR.RAINSUN.model.entity.Train;
-import by.BNTU.FITR.RAINSUN.model.entity.Coach;
+import by.BNTU.FITR.RAINSUN.model.entity.trains.Coach;
+import by.BNTU.FITR.RAINSUN.model.entity.containers.Depo;
+import by.BNTU.FITR.RAINSUN.model.entity.containers.Train;
 
-/**
- * @author SHOTSUN
- */
+
 public class Counter {
 
     public static int calculateTotalCost(Depo depo) {
 
         int total = 0;
 
-        for (Train train : depo.getDepo()) {
-            for (Coach coach : train.getList()) {
-                total += coach.getWeight();
+        if (depo != null && depo.getClass() == Depo.class) {
+            for (Train train : depo.get()) {
+                for (Coach coach : train.get()) {
+                    total += coach.getWeight();
+                }
             }
+
         }
         return total;
     }

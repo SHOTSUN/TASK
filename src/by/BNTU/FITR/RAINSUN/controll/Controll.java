@@ -1,24 +1,28 @@
 package by.BNTU.FITR.RAINSUN.controll;
 
-import by.BNTU.FITR.RAINSUN.model.entity.Depo;
 import by.BNTU.FITR.RAINSUN.entity.logic.Counter;
-import by.BNTU.FITR.RAINSUN.view.View;
+import by.BNTU.FITR.RAINSUN.model.entity.containers.Depo;
+import by.BNTU.FITR.RAINSUN.util.Creator;
 
-/**
- * @author SHOTSUN
- */
+import by.BNTU.FITR.RAINSUN.model.entity.collsections.StackOfArray;
+import by.BNTU.FITR.RAINSUN.model.entity.collsections.QueueOfArray;
+import by.BNTU.FITR.RAINSUN.model.entity.collsections.QueueOfList;
+import by.BNTU.FITR.RAINSUN.model.entity.collsections.StackOfList;
+import by.BNTU.FITR.RAINSUN.model.entity.containers.Train;
+import by.BNTU.FITR.RAINSUN.model.entity.trains.Coach;
+
 public class Controll {
 
     public static void main(String[] args) {
 
         Depo depo = new Depo();
-        depo.createDepo(3);
 
-        View.print(Counter.calculateTotalCost(depo) + " - total weight");
-        
-        View.print(depo.showDepo() + "");
-        
-       
+        Creator.createDepo(depo, 4);
+
+        System.out.println(Counter.calculateTotalCost(depo) + " - total weight");
+
+        System.out.println(depo);
+
     }
 
 }

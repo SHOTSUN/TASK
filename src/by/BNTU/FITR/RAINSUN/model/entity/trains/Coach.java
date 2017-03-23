@@ -1,8 +1,5 @@
-package by.BNTU.FITR.RAINSUN.model.entity;
+package by.BNTU.FITR.RAINSUN.model.entity.trains;
 
-/**
- * @author Владислав
- */
 public class Coach {
 
     private int weight;
@@ -10,9 +7,19 @@ public class Coach {
     public Coach() {
     }
 
+    private void throwError(int ind, String msg) {
+        switch (ind) {
+            case 0: {
+                throw new IllegalArgumentException(msg);
+            }
+        }
+    }
+
     public Coach(int weight) {
         if (weight > 0) {
             this.weight = weight;
+        } else {
+            throwError(0, "Weight must be > 0");
         }
     }
 
@@ -23,6 +30,8 @@ public class Coach {
     public void setWeight(int weight) {
         if (weight > 0) {
             this.weight = weight;
+        } else {
+            throwError(0, "Weight must be > 0");
         }
     }
 

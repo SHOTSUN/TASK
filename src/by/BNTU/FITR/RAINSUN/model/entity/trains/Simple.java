@@ -1,10 +1,5 @@
+package by.BNTU.FITR.RAINSUN.model.entity.trains;
 
-package by.BNTU.FITR.RAINSUN.model.entity;
-
-/**
- *
- * @author SHOTSUN
- */
 public class Simple extends Coach {
 
     private int cargoType;
@@ -12,13 +7,11 @@ public class Simple extends Coach {
     public Simple() {
         super();
         this.cargoType = 0;
-
     }
 
     public Simple(int weight, int cargoType) {
         super(weight);
         this.cargoType = cargoType;
-
     }
 
     public int getType() {
