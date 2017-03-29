@@ -22,16 +22,38 @@ public class StackOfArrayTest {
         System.out.println("CLEARED");
     }
 
+    @Test(expected = ExistenceException.class)
+    public void testGetFail() throws ExistenceException {
+        System.out.println("getFail");
+        instance.get();
+    }
+
+    @Test(expected = ExistenceException.class)
+    public void testShowFail() throws ExistenceException {
+        System.out.println("showFail");
+        instance.show();
+    }
+
     @Test
-    public void testPut() {
-        System.out.println("put");
-        int expResult = 10;
+    public void testGet() throws ExistenceException {
+        System.out.println("get");
+        int expResult = 20;
         instance.put(10);
-        try {
-            assertEquals(expResult, instance.show());
-        } catch (ExistenceException e) {
-        }
-        
+        instance.put(20);
+        instance.put(30);
+        instance.get();
+        assertEquals(expResult, instance.show());
+
+    }
+
+    @Test
+    public void testShow() throws ExistenceException {
+        System.out.println("show");
+        int expResult = 30;
+        instance.put(10);
+        instance.put(20);
+        instance.put(30);
+        assertEquals(expResult, instance.show());
     }
 
     @Test
