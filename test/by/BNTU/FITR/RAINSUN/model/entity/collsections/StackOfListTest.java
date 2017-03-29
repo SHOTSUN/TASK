@@ -1,5 +1,6 @@
 package by.BNTU.FITR.RAINSUN.model.entity.collsections;
 
+import by.BNTU.FITR.RAINSUN.model.exceptions.ExistenceException;
 import org.junit.After;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -26,7 +27,11 @@ public class StackOfListTest {
         System.out.println("put");
         int expResult = 10;
         instance.put(10);
-        assertEquals(expResult, instance.show());
+        try {
+            assertEquals(expResult, instance.show());
+        } catch (ExistenceException e) {
+        }
+        
     }
 
     @Test

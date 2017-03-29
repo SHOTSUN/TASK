@@ -1,18 +1,23 @@
 
 package by.BNTU.FITR.RAINSUN.model.entity.containers;
+import by.BNTU.FITR.RAINSUN.model.entity.collsections.NewCollection;
 import by.BNTU.FITR.RAINSUN.model.entity.collsections.StackOfArray;
 import by.BNTU.FITR.RAINSUN.model.entity.trains.Coach;
-import by.BNTU.FITR.RAINSUN.model.entity.trains.Coach;
+import java.util.Iterator;
 
 /**
  * @author Владислав
  */
-public class Train {
+public class Train implements Iterable<Coach> {
 
-    private final StackOfArray<Coach> train;
+    private final NewCollection<Coach> train;
 
     public Train(){
         train = new StackOfArray();
+    }
+    
+    public Train(NewCollection<Coach> box) {
+        train = box;
     }
     
     public Train(Coach coach){
@@ -26,8 +31,13 @@ public class Train {
         }
     }
 
-    public StackOfArray<Coach> get() {
+    public NewCollection<Coach> get() {
         return train;
+    }
+    
+    @Override
+    public Iterator<Coach> iterator(){
+        return train.iterator();
     }
 
     @Override

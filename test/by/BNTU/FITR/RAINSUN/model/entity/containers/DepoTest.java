@@ -1,15 +1,14 @@
-
 package by.BNTU.FITR.RAINSUN.model.entity.containers;
 
-import by.BNTU.FITR.RAINSUN.model.entity.collsections.StackOfArray;
 import by.BNTU.FITR.RAINSUN.model.entity.trains.Coach;
+import by.BNTU.FITR.RAINSUN.model.exceptions.ExistenceException;
 import org.junit.After;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
 
 public class DepoTest {
-    
+
     private Depo instance;
 
     @Before
@@ -31,19 +30,21 @@ public class DepoTest {
         instance.add(train);
         int expresult = 1;
         assertEquals(expresult, instance.get().size());
-        
+
     }
-   
 
     @Test
     public void testGet() {
         System.out.println("getTrain");
         Train train = new Train();
         instance.add(train);
-        Train result = instance.get().show();
+        Train result = null;
+        try {
+            result = instance.get().show();
+        }catch(ExistenceException e){}
         assertEquals(result, train);
     }
-    
+
     @Test
     public void testToString() {
         System.out.println("toString");
@@ -51,5 +52,5 @@ public class DepoTest {
         String expResult = "\n\tTrains:\nweight = 10;\n";
         assertEquals(instance.toString(), expResult);
     }
-    
+
 }

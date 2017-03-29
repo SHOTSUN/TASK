@@ -1,6 +1,7 @@
 package by.BNTU.FITR.RAINSUN.model.entity.collsections;
 
 import by.BNTU.FITR.RAINSUN.model.entity.structers.Struct;
+import by.BNTU.FITR.RAINSUN.model.exceptions.ExistenceException;
 import java.util.NoSuchElementException;
 
 public class StackOfList<T> extends ListAbstract<T> {
@@ -11,9 +12,9 @@ public class StackOfList<T> extends ListAbstract<T> {
     }
 
     @Override
-    public T get() {
+    public T get()throws ExistenceException {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new ExistenceException("NO ELEMENTS TO TAKE");
         }
         T item = (T) head.element;
         head = head.next;

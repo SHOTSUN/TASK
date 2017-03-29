@@ -2,6 +2,7 @@ package by.BNTU.FITR.RAINSUN.model.entity.containers;
 
 import by.BNTU.FITR.RAINSUN.model.entity.collsections.StackOfArray;
 import by.BNTU.FITR.RAINSUN.model.entity.trains.Coach;
+import by.BNTU.FITR.RAINSUN.model.exceptions.ExistenceException;
 import org.junit.After;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -40,8 +41,11 @@ public class TrainTest {
         System.out.println("getTrain");
         Coach coach = new Coach();
         instance.add(coach);
-        Coach result = instance.get().show();
-        assertEquals(coach, instance.get().show());
+        Coach result = null;
+        try {
+            result = instance.get().show();
+        }catch(ExistenceException e){}
+        assertEquals(coach, result);
     }
     
     @Test

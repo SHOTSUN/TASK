@@ -12,8 +12,8 @@ public class Counter {
         int total = 0;
 
         if (depo != null && depo.getClass() == Depo.class) {
-            for (Train train : depo.get()) {
-                for (Coach coach : train.get()) {
+            for (Train train : depo) {
+                for (Coach coach : train) {
                     total += coach.getWeight();
                 }
             }

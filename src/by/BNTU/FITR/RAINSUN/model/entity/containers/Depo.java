@@ -1,16 +1,22 @@
 package by.BNTU.FITR.RAINSUN.model.entity.containers;
 
+import by.BNTU.FITR.RAINSUN.model.entity.collsections.NewCollection;
 import by.BNTU.FITR.RAINSUN.model.entity.collsections.StackOfArray;
+import java.util.Iterator;
 
 /**
  * @author SHOTSUN
  */
-public class Depo {
+public class Depo implements Iterable<Train> {
     
-    final private StackOfArray<Train> depo;
+    private final NewCollection<Train> depo;
     
     public Depo() {
         depo = new StackOfArray();
+    }
+    
+    public Depo(NewCollection<Train> box) {
+        depo = box;
     }
     
     public Depo(Train train) {
@@ -18,7 +24,7 @@ public class Depo {
         depo.put(train);
     }
     
-    public StackOfArray<Train> get() {
+    public NewCollection<Train> get() {
         return depo;
     }
     
@@ -31,6 +37,11 @@ public class Depo {
         } catch (ArrayStoreException e) {
             throw e;
         }
+    }
+    
+    @Override
+    public Iterator<Train> iterator(){
+        return depo.iterator();
     }
     
     @Override

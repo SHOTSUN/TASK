@@ -2,6 +2,7 @@ package by.BNTU.FITR.RAINSUN.model.entity.collsections;
 
 import by.BNTU.FITR.RAINSUN.model.entity.collsections.iterator.ListIterator;
 import by.BNTU.FITR.RAINSUN.model.entity.structers.Struct;
+import by.BNTU.FITR.RAINSUN.model.exceptions.ExistenceException;
 import java.util.AbstractCollection;
 import java.util.Iterator;
 
@@ -26,9 +27,9 @@ public abstract class ListAbstract<T> extends AbstractCollection<T> implements N
     }
 
     @Override
-    public T show() {
+    public T show() throws ExistenceException{
         if (isEmpty()) {
-            throw new java.util.NoSuchElementException();
+            throw new ExistenceException("NO ELEMENTS TO SHOW");
         }
         return (T) head.element;
     }
