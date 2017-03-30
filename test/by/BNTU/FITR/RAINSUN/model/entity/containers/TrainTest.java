@@ -1,6 +1,5 @@
 package by.BNTU.FITR.RAINSUN.model.entity.containers;
 
-import by.BNTU.FITR.RAINSUN.model.entity.collsections.StackOfArray;
 import by.BNTU.FITR.RAINSUN.model.entity.trains.Coach;
 import by.BNTU.FITR.RAINSUN.model.exceptions.ExistenceException;
 import org.junit.After;
@@ -9,7 +8,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 
 public class TrainTest {
-    
+
     private Train instance;
 
     @Before
@@ -31,23 +30,18 @@ public class TrainTest {
         instance.add(coach);
         int expresult = 1;
         assertEquals(expresult, instance.get().size());
-        
-    }
-   
 
+    }
 
     @Test
-    public void testGetTrain() {
+    public void testGetTrain() throws ExistenceException {
         System.out.println("getTrain");
         Coach coach = new Coach();
         instance.add(coach);
-        Coach result = null;
-        try {
-            result = instance.get().show();
-        }catch(ExistenceException e){}
+        Coach result = instance.get().pick();
         assertEquals(coach, result);
     }
-    
+
     @Test
     public void testToString() {
         System.out.println("toString");
@@ -55,5 +49,5 @@ public class TrainTest {
         instance.add(new Coach());
         assertEquals(expResult, instance.toString(), expResult);
     }
-    
+
 }

@@ -27,7 +27,7 @@ public abstract class ListAbstract<T> extends AbstractCollection<T> implements N
     }
 
     @Override
-    public T show() throws ExistenceException{
+    public T pick() throws ExistenceException{
         if (isEmpty()) {
             throw new ExistenceException("NO ELEMENTS TO SHOW");
         }

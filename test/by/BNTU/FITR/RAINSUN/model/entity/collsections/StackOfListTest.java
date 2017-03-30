@@ -25,42 +25,53 @@ public class StackOfListTest {
     @Test(expected = ExistenceException.class)
     public void testGetFail() throws ExistenceException {
         System.out.println("getFail");
-        instance.get();
+        instance.pop();
     }
 
     @Test(expected = ExistenceException.class)
     public void testShowFail() throws ExistenceException {
         System.out.println("showFail");
-        instance.show();
+        instance.pick();
     }
     
     @Test
     public void testShow() throws ExistenceException{
         System.out.println("show");
         int expResult = 30;
-        instance.put(10);
-        instance.put(20);
-        instance.put(30);
-        assertEquals(expResult, instance.show());
+        instance.push(10);
+        instance.push(20);
+        instance.push(30);
+        assertEquals(expResult, instance.pick());
     }
 
     @Test
     public void testGet() throws ExistenceException {
         System.out.println("get");
         int expResult = 20;
-        instance.put(10);
-        instance.put(20);
-        instance.put(30);
-        instance.get();
-        assertEquals(expResult, instance.show());
+        instance.push(10);
+        instance.push(20);
+        instance.push(30);
+        instance.pop();
+        assertEquals(expResult, instance.pick());
 
+    }
+    
+    @Test
+    public void testSize(){
+        System.out.println("size");
+        int expResult = 3;
+        instance.push(10);
+        instance.push(20);
+        instance.push(30);
+        int result = instance.size();
+        assertEquals(expResult, result);
     }
 
     @Test
     public void testToString() {
         System.out.println("toString");
         String expResult = "\n10\t";
-        instance.put(10);
+        instance.push(10);
         String result = instance.toString();
         assertEquals(expResult, result);
     }

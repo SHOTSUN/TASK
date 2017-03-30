@@ -21,7 +21,7 @@ public class Depo implements Iterable<Train> {
     
     public Depo(Train train) {
         depo = new StackOfArray();
-        depo.put(train);
+        depo.push(train);
     }
     
     public NewCollection<Train> get() {
@@ -31,7 +31,7 @@ public class Depo implements Iterable<Train> {
     public void add(Train... trains) {
         try {
             for (Train t : trains) {
-                depo.put(t);
+                depo.push(t);
             }
             
         } catch (ArrayStoreException e) {

@@ -12,7 +12,7 @@ public class StackOfList<T> extends ListAbstract<T> {
     }
 
     @Override
-    public T get()throws ExistenceException {
+    public T pop()throws ExistenceException {
         if (isEmpty()) {
             throw new ExistenceException("NO ELEMENTS TO TAKE");
         }
@@ -24,7 +24,7 @@ public class StackOfList<T> extends ListAbstract<T> {
     }
 
     @Override
-    public void put(T item) {
+    public void push(T item) {
         Struct buf = head;
         head = new Struct();
         head.element = item;

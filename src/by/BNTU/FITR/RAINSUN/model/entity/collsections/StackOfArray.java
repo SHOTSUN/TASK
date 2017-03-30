@@ -8,7 +8,7 @@ public class StackOfArray<T> extends ArrayAbstract<T> {
     }
 
     @Override
-    public void put(T item) {
+    public void push(T item) {
 
         Object newbox[] = new Object[size + 1];
         System.arraycopy(box, 0, newbox, 1, size);

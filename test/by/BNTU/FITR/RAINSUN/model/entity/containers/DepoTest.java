@@ -34,14 +34,11 @@ public class DepoTest {
     }
 
     @Test
-    public void testGet() {
+    public void testGet() throws ExistenceException{
         System.out.println("getTrain");
         Train train = new Train();
         instance.add(train);
-        Train result = null;
-        try {
-            result = instance.get().show();
-        }catch(ExistenceException e){}
+        Train result = instance.get().pick();
         assertEquals(result, train);
     }
 

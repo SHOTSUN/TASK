@@ -14,7 +14,7 @@ public class QueueOfList<T> extends ListAbstract<T> {
     }
 
     @Override
-    public T get() throws ExistenceException {
+    public T pop() throws ExistenceException {
         if (isEmpty()) {
             throw new ExistenceException("NO ELEMENTS TO TAKE");
         }
@@ -30,7 +30,7 @@ public class QueueOfList<T> extends ListAbstract<T> {
     }
 
     @Override
-    public void put(T item) {
+    public void push(T item) {
         Struct buf = tail;
         tail = new Struct();
         tail.element = item;

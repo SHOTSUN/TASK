@@ -4,7 +4,6 @@ import by.BNTU.FITR.RAINSUN.model.entity.collsections.iterator.ArrayIterator;
 import by.BNTU.FITR.RAINSUN.model.exceptions.ExistenceException;
 import java.util.AbstractCollection;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public abstract class ArrayAbstract<T> extends AbstractCollection<T>
         implements NewCollection<T> {
@@ -31,7 +30,7 @@ public abstract class ArrayAbstract<T> extends AbstractCollection<T>
     }
 
     @Override
-    public T show() throws ExistenceException {
+    public T pick() throws ExistenceException {
         if (isEmpty()) {
             throw new ExistenceException("NO ELEMENTS TO SHOW");
         }
@@ -39,7 +38,7 @@ public abstract class ArrayAbstract<T> extends AbstractCollection<T>
     }
 
     @Override
-    public T get() throws ExistenceException {
+    public T pop() throws ExistenceException {
         if (isEmpty()) {
             throw new ExistenceException("NO ELEMENTS");
         }

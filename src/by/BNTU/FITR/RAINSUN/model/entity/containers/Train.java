@@ -22,12 +22,12 @@ public class Train implements Iterable<Coach> {
     
     public Train(Coach coach){
         train = new StackOfArray();
-        train.put(coach);
+        train.push(coach);
     }
     
     public void add(Coach ... obj) {
         for (Coach c : obj) {
-            train.put(c);
+            train.push(c);
         }
     }
 
