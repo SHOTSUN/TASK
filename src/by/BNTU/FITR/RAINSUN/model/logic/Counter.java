@@ -1,4 +1,4 @@
-package by.BNTU.FITR.RAINSUN.entity.logic;
+package by.BNTU.FITR.RAINSUN.model.logic;
 
 import by.BNTU.FITR.RAINSUN.model.entity.trains.Coach;
 import by.BNTU.FITR.RAINSUN.model.entity.containers.Depo;

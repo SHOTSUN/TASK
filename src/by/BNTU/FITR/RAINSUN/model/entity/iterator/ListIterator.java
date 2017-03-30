@@ -1,4 +1,4 @@
-package by.BNTU.FITR.RAINSUN.model.entity.collsections.iterator;
+package by.BNTU.FITR.RAINSUN.model.entity.iterator;
 
 import by.BNTU.FITR.RAINSUN.model.entity.structers.Struct;
 import java.util.Iterator;

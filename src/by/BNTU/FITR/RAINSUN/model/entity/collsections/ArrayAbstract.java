@@ -1,6 +1,6 @@
 package by.BNTU.FITR.RAINSUN.model.entity.collsections;
 
-import by.BNTU.FITR.RAINSUN.model.entity.collsections.iterator.ArrayIterator;
+import by.BNTU.FITR.RAINSUN.model.entity.iterator.ArrayIterator;
 import by.BNTU.FITR.RAINSUN.model.exceptions.ExistenceException;
 import java.util.AbstractCollection;
 import java.util.Iterator;

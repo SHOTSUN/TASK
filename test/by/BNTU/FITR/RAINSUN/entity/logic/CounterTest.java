@@ -1,5 +1,6 @@
 package by.BNTU.FITR.RAINSUN.entity.logic;
 
+import by.BNTU.FITR.RAINSUN.model.logic.Counter;
 import by.BNTU.FITR.RAINSUN.model.entity.trains.Coach;
 import by.BNTU.FITR.RAINSUN.model.entity.containers.Depo;
 import by.BNTU.FITR.RAINSUN.model.entity.containers.Train;

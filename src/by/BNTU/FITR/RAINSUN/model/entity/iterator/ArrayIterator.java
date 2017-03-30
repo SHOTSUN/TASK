@@ -1,4 +1,4 @@
-package by.BNTU.FITR.RAINSUN.model.entity.collsections.iterator;
+package by.BNTU.FITR.RAINSUN.model.entity.iterator;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
