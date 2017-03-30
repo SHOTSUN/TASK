@@ -33,9 +33,9 @@ public class StackOfListTest {
         System.out.println("showFail");
         instance.pick();
     }
-    
+
     @Test
-    public void testShow() throws ExistenceException{
+    public void testShow() throws ExistenceException {
         System.out.println("show");
         int expResult = 30;
         instance.push(10);
@@ -55,9 +55,9 @@ public class StackOfListTest {
         assertEquals(expResult, instance.pick());
 
     }
-    
+
     @Test
-    public void testSize(){
+    public void testSize() {
         System.out.println("size");
         int expResult = 3;
         instance.push(10);

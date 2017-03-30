@@ -47,7 +47,7 @@ public class StackOfArrayTest {
     }
 
     @Test
-    public void testSize(){
+    public void testSize() {
         System.out.println("size");
         int expResult = 3;
         instance.push(10);
@@ -56,7 +56,7 @@ public class StackOfArrayTest {
         int result = instance.size();
         assertEquals(expResult, result);
     }
-    
+
     @Test
     public void testShow() throws ExistenceException {
         System.out.println("show");

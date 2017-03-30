@@ -21,21 +21,21 @@ public class QueueOfArrayTest {
         instance = null;
         System.out.println("CLEARED");
     }
-    
+
     @Test(expected = ExistenceException.class)
-    public void testGetFail() throws ExistenceException{
+    public void testGetFail() throws ExistenceException {
         System.out.println("getFail");
         instance.pop();
     }
-    
+
     @Test(expected = ExistenceException.class)
-    public void testShowFail() throws ExistenceException{
+    public void testShowFail() throws ExistenceException {
         System.out.println("showFail");
         instance.pick();
     }
 
     @Test
-    public void testGet()  throws ExistenceException{
+    public void testGet() throws ExistenceException {
         System.out.println("get");
         int expResult = 20;
         instance.push(10);
@@ -44,9 +44,9 @@ public class QueueOfArrayTest {
         instance.pop();
         assertEquals(expResult, instance.pick());
     }
-    
+
     @Test
-    public void testSize(){
+    public void testSize() {
         System.out.println("size");
         int expResult = 3;
         instance.push(10);
@@ -55,9 +55,9 @@ public class QueueOfArrayTest {
         int result = instance.size();
         assertEquals(expResult, result);
     }
-    
+
     @Test
-    public void testShow() throws ExistenceException{
+    public void testShow() throws ExistenceException {
         System.out.println("show");
         int expResult = 10;
         instance.push(10);

@@ -7,12 +7,12 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 
 public class QueueOfListTest {
-    
-    private  QueueOfList instance;
+
+    private QueueOfList instance;
 
     @Before
     public void init() {
-        instance = new  QueueOfList();
+        instance = new QueueOfList();
         System.out.println("INIT");
     }
 
@@ -23,19 +23,19 @@ public class QueueOfListTest {
     }
 
     @Test(expected = ExistenceException.class)
-    public void testGetFail() throws ExistenceException{
+    public void testGetFail() throws ExistenceException {
         System.out.println("getFail");
         instance.pop();
     }
-    
+
     @Test(expected = ExistenceException.class)
-    public void testShowFail() throws ExistenceException{
+    public void testShowFail() throws ExistenceException {
         System.out.println("showFail");
         instance.pick();
     }
-    
+
     @Test
-    public void testShow() throws ExistenceException{
+    public void testShow() throws ExistenceException {
         System.out.println("show");
         int expResult = 10;
         instance.push(10);
@@ -43,9 +43,9 @@ public class QueueOfListTest {
         instance.push(30);
         assertEquals(expResult, instance.pick());
     }
-    
+
     @Test
-    public void testGet() throws ExistenceException{
+    public void testGet() throws ExistenceException {
         System.out.println("get");
         int expResult = 20;
         instance.push(10);
@@ -54,9 +54,9 @@ public class QueueOfListTest {
         instance.pop();
         assertEquals(expResult, instance.pick());
     }
-    
+
     @Test
-    public void testSize(){
+    public void testSize() {
         System.out.println("size");
         int expResult = 3;
         instance.push(10);
@@ -82,5 +82,5 @@ public class QueueOfListTest {
         String result = instance.toString();
         assertEquals(expResult, result);
     }
-    
+
 }
